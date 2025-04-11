@@ -1,0 +1,102 @@
+<!---Constants: JavaScript constants are the variables whose values 
+remain unchanged throughout the execution of the program-->
+<!--You always need to assign a value at the time of declaration 
+if the variable is declared using the const keyword.-->
+<!--Cant be reassigned:You cant update the value of variable once it is
+assigned -->
+<!--Block scope: A variable declared with const keyword has a block scope-->
+<!--redeclaring variable is not possible-->
+
+<!--Comparison basis	var	        let	    const
+Scope	                Function	Block	Block
+Hoisted	                  Yes	     No	     No
+Reassign	              Yes	     Yes	 No
+Re-declare	              Yes	      No	 No-->
+
+<!--Datatypes: Primitive Datatypes and Non-primitive datatypes
+Primitive Datatypes:
+String: In JavaScript, the string is a sequence of characters and can be created using 3 different ways given below −
+Using the single quote
+Using the double quote
+Using the backticks
+Numbers: A JavaScript number is always stored as a floating-point value (decimal number).
+Undefined: When you declare a variable but don't initialize it, it contains an undefined value. However, 
+you can manually assign an undefined value to the variable also.-->
+<!--Null: When any variable's value is unknown, you can use the null. It is good practice to use the null 
+for the empty or unknown value rather than the undefined one.-->
+<!--Bigint: JavaScript stores only 64-bit long floating point numbers. If you want to store a 
+very large number, you should use the Bigint-->
+
+<!--Non-primitive datatypes: Primitive data types can store only a single value. To store multiple 
+and complex values, non-primitive data types are used.
+Examples: Object: Used to store key value pairs
+Array:Ordered list of values -->
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Ordered list of valuestle>Constants</title>
+    </head>
+    <body>
+        <script>
+            const x = 10; //correct way
+            document.write(x);
+            /*const y; //Incorrect way
+            y = 20;*/
+            const z = 30; //This is not possible
+           // z = 40;
+            document.write(z);
+        </script>
+        <script>
+            const a = "hello";
+            //const a = "world"; error
+            document.write(a);
+        </script>
+        <script>
+            //Datatypes
+            //let a = 'Hello world'; error
+            let b = "Hello world";
+            let c = `Hello world`;
+            document.write(b);
+
+            //Numbers
+            var d = 15;
+            var e = 15.25;
+            document.write(d);
+            document.write(e);
+
+            //Exponential notation of numbers
+            let f = 98e4;
+            let g = 98e-4;
+            document.write(f);
+            document.write("<br/>");
+            document.write(g);
+
+            //Boolean datatype: true or false
+            let h = true;
+            let i = false;
+            //Undefined
+            let j;
+            let k = "ajay";
+            k = undefined;
+
+            //Null
+            let l = null;
+            let m = "apartment";
+            m = null; //updating the value to null
+
+            //Bigint
+            let n = 123456789101112131415161718;
+            document.write(n);
+        </script>
+    </body>
+</html>
+
+<!--Object example: const person = {
+                    name: "chandu";
+                    age: 25;
+                    isstudent: false;
+Array example: const colors = ["red","blue","green"]
+Map example: const map = new Map();
+             map.set("a",1);
+             map.set("b",2);-->
