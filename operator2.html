@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operators 2</title>
+    </head>
+    <body>
+        <div id="result1"></div>
+        <div id="result2"></div>
+        <script>
+            //Nullish Coalescing operator: ?? The nullish coalescing operator (??) returns the second operand (op2) if the first operand (op1) is null or undefined. Otherwise, the 
+            // 'res' variable will contain 'op2'.
+            let x = null;
+            let y = x ?? 5;
+            document.write(y);
+
+            let a = 5;
+            let b = a ?? b;
+            document.write(b);
+
+            /*//Safe assignment operator: Makes it easier to handle errors in code ?=
+            //Instead of try catch block we can use ?=
+            let username = null;
+            username ?= "Chandu";*/
+
+            //Delete operator: The JavaScript delete operator deletes/ removes a property from an object. 
+            // It removes the property as well as value of the property from the object. 
+            // It works only with the objects not with the variables or functions.
+            //Cant delete variable and functions
+            const object = {
+                name: "Chandu",
+                price: 500,
+                color: "blue",
+            }
+            delete object.price;
+            document.write(object.name+" "+object.color);
+            const arr = [1,2,3,4,5]
+            delete arr[1]
+            document.write(arr+"<br>"+arr[1]);
+
+            //Comma operator: The comma operator (,) in 
+            // JavaScript evaluates the multiple expression from left to right.
+            let c = 5;
+            let ans = (c=8, c++, c+=1, c*=2) 
+            document.write(ans);
+
+            function first() {
+                document.write("Hello, Please welcome");
+            }
+            function second() {
+                document.write("I am Chandana HR");
+            }
+            //let result = (first(),second());
+            document.write(first(),second());
+
+            //Grouping operator: controls the precedence of the evaluation in expressions. 
+            // It is denoted by parenthesis ()
+            let res1 = 4+(5*10);
+            let res2 = (4+5)*10;
+            document.write(res1);
+            document.write(res2);
+        </script>
+        <script>
+            //Spread operator: spread operator () allows us to spread out elements of an iterable such as an array. 
+            // The spread operator is represented with three dots ()
+            const nums1 = [10,20,30];
+            //const nums2 = [...nums1];
+            document.write(nums1);
+            document.write("</br>");
+            document.write(...nums1);
+            const nums2 = [...nums1];
+            document.getElementById("result1").innerHTML = nums1;
+            document.getElementById("result2").innerHTML = nums2;
+        </script>
+    </body>
+</html>
