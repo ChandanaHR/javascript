@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="result"></div>
+        <div id="result1"></div>
+        <div id="output"></div>
+        <script>
+            //if-else: executes a block of code when the specified condition is true. When the condition 
+            // is false the else block will be executed
+            //if-statement:
+            let result;
+            let age=15;
+            if(age>18) {
+                result = "Qualified";
+            }
+            else {
+                result = "Not qualified";
+            }
+            document.getElementById('result').innerHTML = result;
+        </script>
+        <script>
+            //Javascript if else if
+            let book = "maths"
+            if(book == "history") {
+                document.getElementById('result1').innerHTML = "history";
+            }
+            else if(book == "physics") {
+                document.getElementById('result1').innerHTML = "physics";
+            }
+            else {
+                document.getElementById('result1').innerHTML = "maths";
+            }
+        </script>
+        <script>
+            //While loop: executes a block of code repeatedly, as long 
+            // as the specified condition is true
+            //Entry controlled loop: The loop checks whether the looping condition is valid first and enters 
+            // into the body of the loop to execute the loop statements.
+            //while loop: The purpose of a while loop is to execute a statement or code block repeatedly as long as an expression is true. 
+            // Once the expression becomes false, the loop terminates.
+            let count = 0;
+            while(count < 10) {
+                document.write(count+"<br/>");
+                count++;
+            }
+        </script>
+        <script>
+            //do-while loop: The do...while loop is similar to the while loop except that the 
+            // condition check happens at the end of the loop.
+            let count1 = 0
+            do{
+                document.write(count1+"<br/>");
+                count1++;
+            }
+            while(count1<5);
+        </script>
+        <script>
+            //For loop
+            var count2 = 0;
+            for(count2=0;count2<6;count2++) {
+                document.write(count2);
+            }
+            //Intialization is optional: You can also initialize the 
+            // variable outside the loop and use it with the loop.
+            document.write("<br/>")
+            var p =0;
+            for(;p<6;p++) {
+                document.write(p);
+            }
+            //Conditional statement is optional:However, if you don't write any condition, it will make infinite iterations. So, you can use 
+            // the 'break' keyword with the for loop to stop the execution of the loop
+            let arr = [10,20,30,40,50,60]
+            var q = 0
+            for(;;q++) {
+                if(q>=arr.length) {
+                    break;
+                }
+                else {
+                    document.write(arr[q]+" ");
+                }
+            }
+            let str = "Tutorial";
+            var r = 0;
+            for(;;) {
+                if(r>str.length) {
+                    break;
+                }
+                else {
+                    document.write(str[r]);
+                }
+                r++;
+            }
+        </script>
+        <script>
+            //For-in : The for...in loop in JavaScript is used to loop through an object's properties. The JavaScript for...in loop is a variant of the for loop. 
+            // The for loop can't be used to traverse through the object properties
+            let fruits = {
+                first: "Apple",
+                second: "Mango",
+                third: "Watermelon"
+            }
+            for(key in fruits) {
+                document.write(fruits[key]+ "<br/>");
+            }
+            //We can use for in with strings and arrays
+            //For..of loop : used to traverse elements of the iterable object
+            //arrays and strings
+            let arr1 = [30,40,50,60,70]
+            for(let ele of arr1) {
+                document.write(ele+" ");
+            }
+        </script>
+    </body>
+</html>
