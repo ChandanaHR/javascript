@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Functions</title></head>
+    <body>
+        <p id = "result1"></p>
+        <p id = "result2"></p>
+        <script>
+            //Functions: A function in JavaScript is a group of reusable code that can be called anywhere in your program. 
+            // It eliminates the need of writing the same code again and again
+            //function firstfunction() {
+               // alert("Hello world");
+          //  }
+            //firstfunction();
+
+            //Function expression: allows us to define a JavaScript function in an expression
+            const sum = function(x,y){
+                return x+y;
+            }
+            let z = sum(2,3);
+            document.write(z);
+        </script>
+        <script>
+            const sum1 = function() {
+                let a = 10;
+                let b = 20;
+                document.getElementById("result1").innerHTML = a+b;
+            }
+            sum1();
+        </script>
+        <script>
+            //Nested functions
+            const first = function() {
+                const second = function(x,y) {
+                    return x*y;
+                }
+                return second;
+            }
+            let res = first()(2,3);
+            document.getElementById("result2").innerHTML = res;
+        </script>
+        <script>
+            //Function parameters: The function parameters in JavaScript are variables 
+            // listed inside the parentheses in the function definition.
+            function multiply(x,y,z) {
+                return x*y*z;
+            }
+            let res2 = multiply(2,3,4);
+            document.write(res2);
+
+            //Argument object
+            function merge() {
+                let result2 = ""
+                for(let i=0;i<arguments.length;i++) {
+                    result2 += arguments[i] + " ";
+                }
+                return result2
+            }
+            let result3 = merge("Hello","my","name","is","chandu")
+            document.write(result3);
+        </script>
+        <script>
+            //Nested functions
+            function outerfunction(outervariable) {
+                document.write(outervariable)
+                function innerfunction(innervariable) {
+                    document.write(innervariable)
+                }
+                innerfunction("Hello my name is chandana")
+            }
+            outerfunction("Hello world")
+        </script>
+        <script>
+            //Passing arguments by value
+            //when you pass the argument by value to a function call, it sends the argument 
+            // value to the parameter of the function definition. So, when you update 
+            // the function parameters, the function argument doesn't get changed.
+            function update(val1,val2) { //function definition
+                val1 = 10
+                val2 = 20
+            }
+            var val1 = "Hello"
+            var val2 = "World"
+            update(val1,val2); //function call
+            document.write("<br/>");
+            document.write("Before updating:" +val1+" "+val2);
+            document.write("After updating:" +val1+" "+val2);
+        </script>
+        <script>
+            //Passing by reference
+            //When you pass the object as an argument, the function sends the address 
+            //of the object as a parameter to the function definition
+            function update(userdf) {
+                userdf.name = "updated name"
+            }
+            const user = {
+                name: "chandu",
+                age: 25
+            }
+            console.log(user);
+            update(user);
+            console.log(user);
+        </script>
+    </body>
+</html>
