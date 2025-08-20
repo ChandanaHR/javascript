@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = "alert('Button clicked')">Click me1</button><br><br> <!--Inline event-->
+    <button id="btn1">Click me2</button><br><br>
+    <button id="btn2">Click me3</button><br><br>
+    <button id="btn3">Click me4</button><br><br>
+    <button id="btn4">Click me5</button><br><br>
+    <script>
+        document.getElementById("btn1").onclick = function() {
+        alert("Second button clicked") //Using javascript property
+    };
+
+    document.getElementById("btn2").addEventListener("click",function(){ //Using addEventListener
+            alert("Third button clicked")
+        });
+
+        //Difference between normal events and add event listener
+    document.getElementById("btn3").onclick = function() {
+    alert("Fourth button clicked") 
+    };
+
+    document.getElementById("btn3").onclick = function() {
+    alert("Again Fourth button clicked") 
+    };
+
+    document.getElementById("btn4").addEventListener("click",()=>alert("Fifth button clicked"));
+    document.getElementById("btn4").addEventListener("click",()=>alert("Again Fifth button clicked"));
+    </script>
+</body>
+</html>
