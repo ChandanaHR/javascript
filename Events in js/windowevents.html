@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Window events demo</h1>
+    <div class="logo" id="logo"></div>
+    <script>
+        function log(message) {
+            const logbox = document.getElementById("logo");
+            const p = document.createElement("p");
+            p.style.backgroundColor = "blue";
+            p.style.color = "white";
+            p.textContent = message;
+            logbox.appendChild(p);
+            logbox.scrollTop = logbox.scrollHeight;
+        }
+        // 1. load - When the page is fully loaded (HTML, CSS, images, etc.)
+        //     Run code after page is ready
+        window.addEventListener("load",()=>{
+            log("Page fully loaded")
+        })
+        // 2. resize: If you drag the window bigger/smaller, you’ll see the size in the console.
+        window.addEventListener("resize",()=>{
+            console.log("Window resized to"+window.innerWidth+" =>"+window.innerHeight);
+            log(`Windows resized to ${window.innerHeight}`);
+        })
+        // 3. scroll: Scroll down the page, and it logs your scroll position.
+        window.addEventListener("scroll",()=>{
+            console.log("Window Scrolled to"+window.screenX+"->"+window.scrollY);
+            log(`Windows scrolled ${window.scrollX} ${window.scrollY}`);
+        })
+        // 4. Focus and blur
+        window.addEventListener("focus",()=>{
+            console.log("Window Focused");
+            log(`Windows Focused`);
+        })
+        window.addEventListener("blur",()=>{
+            console.log("Window Blurred");
+            log(`Windows Blurred`);
+        })
+        // 5. beforeunload=>Refresh the page ,Close the tab ,Type a new URL in the address bar 
+        window.addEventListener("beforeunload",function(event){
+            console.log("Window unloaded")
+            log(`Window unloaded`);
+        })
+        //6. error: error event is fired on the window object whenever a JavaScript error occurs 
+        // or when a resource (like an image or script) fails to load.
+        window.addEventListener("error",function(event){
+            console.log("Error message:", event.message);
+            console.log("File:", event.filename);
+            console.log("Line:", event.lineno);
+            console.log("Error object:", event.error);
+        })
+        nonexist();
+    </script>
+</body>
+</html>

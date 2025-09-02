@@ -1,0 +1,82 @@
+<!-- onsubmit: Validate form before sending -->
+ <!-- onreset : confirm before clearing form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myform {
+            margin-left: 30%;
+            margin-top: 10%;
+        }
+        label {
+            font-size: 30px;
+            font-weight: 100;
+        }
+        input {
+            width:30%;
+            height: 50px;
+            font-size: 30px;
+        }
+        button {
+            width: 20%;
+            height: 40px;
+            margin-left: 120px;
+        }
+        #submit {
+            background-color: green;
+            color: white;
+        }
+        #reset {
+            background-color: red;
+            color: white;
+        }
+        h2 {
+            font-size: 40px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form id="resetform">
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="Enter username"> <br><br>
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Enter strong password"> <br><br>
+        <button id="submit" type="submit">Submit</button> <br><br> 
+        <button id="reset" type="reset">Reset</button>
+    </form>
+    <h2 id="message"></h2>
+    <script>
+        let formid = document.getElementById("myform");
+        let resetform = document.getElementById("resetform");
+        let submit = document.getElementById("submit");
+        let reset = document.getElementById("reset");
+        let message = document.getElementById("message");
+        
+        // //onsubmit event
+        // formid.addEventListener("submit",(event)=>{
+        //     // event.preventDefault();
+        //     let username = document.getElementById("username").value.trim();
+        //     let password = document.getElementById("password").value.trim();
+        //     if(username==="" || password===""){
+        //         message.innerText = "Please fill out properly";
+        //     }
+        //     else {
+        //         message.innerText = "Form submitted successfully";
+        //     }
+        // })
+
+        //onreset event
+        resetform.addEventListener("reset",(event)=>{
+            let confirmreset = confirm("Are u sure");
+            if(!confirmreset) {
+                event.preventDefault();
+            }
+        })
+
+    </script>
+</body>
+</html>

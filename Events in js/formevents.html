@@ -1,0 +1,102 @@
+<!-- onfocus
+Input field gets focus (clicked or tabbed into) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Forms are interactive elements (inputs, checkboxes, selects, etc.), and 
+    JavaScript provides form events 
+    to handle user interactions like typing, selecting, submitting, etc. -->
+    <form id="myform">
+        <label>Name:</label>
+        <input type="text" id="name" style="width: 50%; height: 30px"><br><br>
+        <label>Email: </label>
+        <input type="email" id="email" style="width: 50%; height: 30px"><br><br>
+        <button type="submit">Submit</button>
+        <h1 id="output"></h1>
+        <h2 id="output1"></h2>
+        <label>Oninput example</label>
+        <input type="text" id="form3" style="width: 50%; height: 30px" placeholder="Enter city name">
+        <p id="oninput1"></p>
+
+
+        <label>Color select:</label>
+        <select id="colorselect">
+            <option value="">Select</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <p id="colorselect1"></p>
+
+        <h5 id="onselect1">HTML is the standard markup language for Web pages.
+                          With HTML you can create your own Website.
+                          HTML is easy to learn - You will enjoy it!</h5>
+        <h5 id="selected"></h5>
+
+        <textarea id="onselect2">HTML is the standard markup language for Web pages.
+                          With HTML you can create your own Website.
+                          HTML is easy to learn - You will enjoy it!</textarea>
+        <h5 id="selected2"></h5>
+    </form>
+    <script>
+        let name1 = document.getElementById("name");
+        let email1 = document.getElementById("email");
+        let output1 = document.getElementById("output");
+        let output2 = document.getElementById("output1")
+        name1.onfocus = () => {
+            output1.innerText = "Name field focused"
+            name1.style.backgroundColor = "blue"
+            name1.style.color = "white"
+        }
+        email1.addEventListener("focus",function(event){
+            output1.innerText = "Email field focused"
+            email1.style.backgroundColor = "lightblue"
+        })
+        email1.addEventListener("keydown", function(event){
+            let det = `<h1>Event key:</h1> ${event.key}`;
+            output2.innerHTML = det;
+        })
+        // onblur
+        // Input field loses focus
+        // email1.onblur = () => {
+        //     output1.innerText = "Name field lost focus"
+        //     name1.style.backgroundColor = "black"
+        // }
+        // //oninput example: fires on each keystroke
+        // let form3 = document.getElementById("form3")
+        // let oninput1 = document.getElementById("oninput1")
+        // form3.oninput=()=>{
+        //     oninput1.innerText = "Typing...." +form3.value;
+        // }
+        // //  onchange -> fires when value is changed and focus 
+        // // lost (or for select when a new option is chosen)
+        // let colorselect = document.getElementById("colorselect")
+        // let value = document.getElementById("colorselect1")
+        // colorselect.addEventListener("change",()=>{
+        //     value.innerText = "You selected:  "  + colorselect.value;
+        // })
+        // // onselect -> when text is highlighted/selected
+        // // The select event only works on form controls that allow text selection 
+        // // like <input> or <textarea>, not on normal HTML elements like <h5>
+        // let onselect2 = document.getElementById("onselect2")
+        // let selected2 = document.getElementById("selected2")
+        // onselect2.addEventListener("mouseup",()=>{
+        //     let seletext = window.getSelection().toString();
+        //     if (seletext.length > 0) {
+        //         selected2.innerText = "You selected: " + seletext;
+        //     } 
+        // });
+        // // let onselect = document.getElementById("onselect1")
+        // // let selected = document.getElementById("selected")
+        // // onselect.addEventListener("select", () => {
+        // //     let seletext = onselect.value.substring(onselect.selectionStart, onselect.selectionEnd);
+        // //     selected.innerText = "You selected: " + seletext;
+        // // });
+        </script>
+</body>
+</html>

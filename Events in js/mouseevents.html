@@ -1,0 +1,97 @@
+<!-- Mouse events are fired when a user interacts with the 
+mouse (click, move, hover, etc.). -->
+<!-- 1. onclick
+Triggered when the element is clicked
+Click button -->
+<!-- 2.ondblclick
+Triggered on double-click
+Double-click box -->
+<!-- 3.onmouseover
+When mouse enters element
+Hover effect -->
+<!-- onmouseout
+When mouse leaves element
+Reset effect -->
+<!-- onmousedown
+When mouse button is pressed
+Hold button -->
+<!-- onmouseup
+When mouse button is released
+Release after press -->
+<!-- onmousemove
+When mouse is moved over element
+Track cursor -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 50%;
+            height: 50%;
+            border: 4px solid black;
+            background-color: blue;
+            color: white;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <button id="click1">Click me1</button><br><br>
+    <button id="click2">Click me2</button><br><br>
+    <button id="click3">Click me3</button><br><br>
+    <button id="click4">Click me4</button><br><br>
+    <button id="click5">Click me5</button><br><br>  
+    <h1 id="msg"></h1>
+    <h1 id="msg1"></h1>
+    <script>
+        let btn1 = document.getElementById("click1")
+        btn1.onclick = () => {
+            alert("Onclick mouse event executed");
+            btn1.style.background = "black";}
+
+        let btn2 = document.getElementById("click2")
+        btn2.ondblclick = () => {
+            alert("Ondoubleclick mouse event executed");
+            btn2.style.background = "white";
+            btn2.style.color = "black"
+        } 
+
+        let btn3 = document.getElementById("click3")
+        // // btn3.style.background = "blue";
+        // btn3.style.color = "white";
+        btn3.onmouseover = () => {
+            alert("Onmouseover mouse event executed");
+            btn3.style.background = "purple"
+            btn3.style.fontSize = "23px"; }
+
+
+        let btn4 = document.getElementById("click3")
+        // // btn4.style.background = "purple";
+        btn4.onmouseout = () => {
+            alert("Onmouseout mouse event executed");
+            btn4.style.background = "green"
+            btn4.style.color = "yellow"
+            btn4.style.border = "12px solid purple"}
+
+        let btn5 = document.getElementById("click4")
+        let message = document.getElementById("msg")
+        btn5.onmousedown = () => {
+            message.innerText = "Holded"
+            btn5.style.background = "brown"}
+        btn5.onmouseup = () =>  {
+            message.innerText = "Released"
+            btn5.style.background = "yellow"
+            btn5.style.color = "black"
+        }
+
+        let btn6 = document.getElementById("click5")
+        let message1 = document.getElementById("msg1")
+        btn6.onmousemove = (event) => {
+         message1.innerText = `Mouse coordinates X = ${event.clientX}, Y = ${event.clientY}`
+         }
+    </script>
+</body>
+</html>

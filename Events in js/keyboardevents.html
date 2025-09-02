@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- keydown → When a key is pressed down
+    Fires immediately when you press a key.
+    Keeps firing repeatedly if the key is held down. -->
+    <!-- event.key → The actual key’s value (e.g., "a", "Enter", "Shift").
+    event.code → The physical location of the key on the keyboard (e.g., "KeyA", "Space", "ArrowUp").
+    event.altKey → true if Alt is held.
+    event.ctrlKey → true if Ctrl is held.
+    event.shiftKey → true if Shift is held. -->
+    <h1>Press any key</h1>
+    <input id="name1" type="text" placeholder="Type something here" style="width: 50%; height: 30px">
+    <p id="output"></p>
+    <!-- keyup → When a key is released
+    Fires once when you let go of the key.
+    Useful for form validation after typing. -->
+    <h1>Keyup example</h1>
+    <input id="name" type="text" placeholder="Enter ur name" style="width: 50%; height: 30px">
+    <p id="output1"></p> 
+    <script>
+        document.getElementById("name1").addEventListener("keydown",function(event){
+            let details = `<strong>event.key: </strong> ${event.key} <br>
+                           <strong>event.code:</strong> ${event.code} <br>
+                           <strong>event.ShiftKey: </strong> ${event.shiftKey} <br>`;
+            document.getElementById("output").innerHTML = details
+        });
+        document.getElementById("name").addEventListener("keyup",function(event){
+          document.getElementById("output1").innerText = "You typed:" +this.value;
+         })
+    </script>
+</body>
+</html>
